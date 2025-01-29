@@ -6,6 +6,7 @@
   --accent-color: #e74c3c;
   --text-color: #333;
   --background-color: #ecf0f1;
+  --card-background: rgba(255, 255, 255, 0.9);
 }
 
 * {
@@ -34,26 +35,35 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 header {
   text-align: center;
   margin-bottom: 2rem;
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   font-size: 2.5rem;
   color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  background-color: var(--card-background);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 nav ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
-  margin-bottom: 2rem;
 }
 
 nav ul li {
@@ -72,21 +82,29 @@ nav ul li a:hover {
 }
 
 section {
-  margin-bottom: 3rem;
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 h2 {
   color: var(--primary-color);
   margin-bottom: 1rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
 }
 
 .job,
-.education {
+.education,
+.project {
   margin-bottom: 2rem;
 }
 
 h3 {
   color: var(--secondary-color);
+  margin-bottom: 0.5rem;
 }
 
 ul {
@@ -94,10 +112,28 @@ ul {
   padding-left: 1rem;
 }
 
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-category {
+  flex: 1 1 200px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 footer {
   text-align: center;
   margin-top: 2rem;
   color: var(--text-color);
+  background-color: var(--card-background);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -112,6 +148,10 @@ footer {
 
   nav ul li {
     margin: 0.5rem 0;
+  }
+
+  .skills-container {
+    flex-direction: column;
   }
 }
 
