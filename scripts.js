@@ -23,6 +23,8 @@ canvas { display: block; }
   <p>Some content for section 2.</p>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     // Set up the scene
@@ -54,14 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
     camera.position.z = 2;
 
     // Animation
-    const animate = () => {
-        requestAnimationFrame(animate);
-        particlesMesh.rotation.x += 0.0005;
-        particlesMesh.rotation.y += 0.0005;
-        renderer.render(scene, camera);
-    };
+    //const animate = () => {
+    //    requestAnimationFrame(animate);
+    //    particlesMesh.rotation.x += 0.0005;
+    //    particlesMesh.rotation.y += 0.0005;
+    //    renderer.render(scene, camera);
+    //};
 
-    animate();
+    //animate();
 
     // Resize handler
     window.addEventListener('resize', () => {
@@ -77,6 +79,53 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
             });
+        });
+    });
+
+    // Add hover effect to particles
+    let mouseX = 0;
+    let mouseY = 0;
+
+    document.addEventListener('mousemove', (event) => {
+        mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    const clock = new THREE.Clock();
+
+    const tick = () => {
+        const elapsedTime = clock.getElapsedTime();
+
+        // Update particles
+        particlesMesh.rotation.y = -0.1 * elapsedTime;
+        if (mouseX > 0) {
+            particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008);
+            particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008);
+        }
+
+        // Render
+        renderer.render(scene, camera);
+
+        // Call tick again on the next frame
+        window.requestAnimationFrame(tick);
+    };
+
+    tick();
+
+    // Add animations to sections
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray('section').forEach((section, i) => {
+        gsap.from(section, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse'
+            }
         });
     });
 });
