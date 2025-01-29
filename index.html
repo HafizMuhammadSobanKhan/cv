@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hafiz Muhammad Soban Khan - Professional Portfolio</title>
+    <title>Hafiz Muhammad Soban Khan - AI Specialist & Research Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 <body>
     <div id="background"></div>
@@ -20,13 +21,14 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <main>
             <section id="about">
                 <h2>Professional Summary</h2>
-                <p>Dynamic AI Specialist and Research Engineer with expertise in AI-driven cybersecurity, machine learning, and embedded systems vulnerability detection. Proficient in leveraging Linux, AWS, and DevOps for secure and scalable deployments. Experienced in leading international projects, bridging theoretical AI research with practical applications, and enhancing the resilience of critical infrastructure.</p>
+                <p>Dynamic AI Specialist and Research Engineer with expertise in AI-driven cybersecurity, machine learning, and embedded systems vulnerability detection. Proficient in leveraging Linux, AWS, and DevOps for secure and scalable deployments. Experienced in leading international projects, bridging theoretical AI research with practical applications, and enhancing the resilience of critical infrastructure. Currently pursuing an MSc in Artificial Intelligence, specializing in fuzzing frameworks for vulnerability detection.</p>
             </section>
             <section id="experience">
                 <h2>Professional Experience</h2>
@@ -40,7 +42,35 @@
                         <li>Conducted applied research by bridging state-of-the-art AI methodologies with real-world engineering applications.</li>
                     </ul>
                 </div>
-                <!-- Add more job experiences here -->
+                <div class="job">
+                    <h3>Teaching Assistant</h3>
+                    <p>University of Cyprus, Nicosia, Cyprus</p>
+                    <p>September 2024 – Present</p>
+                    <ul>
+                        <li>Supported the Electronic Devices and Circuits course by assisting in lectures, delivering tutorials, and supervising laboratory sessions.</li>
+                        <li>Provided one-on-one mentoring, graded assignments, and helped students connect theory to practical applications.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Electrical Engineer (Project Manager)</h3>
+                    <p>Huawei Technologies, Islamabad, Pakistan</p>
+                    <p>August 2022 – July 2023</p>
+                    <ul>
+                        <li>Managed international telecom and IT integration projects, including variation notes, purchase order approvals, and procurement processes.</li>
+                        <li>Directed end-to-end project operations, including planning, execution, and team coordination for engineering and logistics activities.</li>
+                        <li>Facilitated milestone verification and client satisfaction for timely and successful project delivery.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Internship (Network Maintenance)</h3>
+                    <p>Pakistan Telecommunication Company Limited (PTCL), Islamabad, Pakistan</p>
+                    <p>July 2020 – September 2020</p>
+                    <ul>
+                        <li>Diagnosed and resolved network faults while adhering to strict safety and regulatory standards.</li>
+                        <li>Conducted preventive maintenance and inventory coordination for PTCL sites, ensuring operational efficiency.</li>
+                        <li>Evaluated and tested electrical systems, and trained technicians in safety compliance.</li>
+                    </ul>
+                </div>
             </section>
             <section id="education">
                 <h2>Education</h2>
@@ -48,24 +78,93 @@
                     <h3>Master in Artificial Intelligence</h3>
                     <p>University of Cyprus, Nicosia, Cyprus (Expected May 2025)</p>
                     <p>Key Courses: Artificial Intelligence Fundamentals, Machine Learning, Deep Learning, Natural Language Processing, Artificial Intelligence Ethics I & II, Ontological Databases, Computer Vision.</p>
+                    <p>Thesis: "Adaptive and Scalable Fuzzing Framework for Universal Vulnerability Detection in Embedded Systems Using Advanced AI Techniques"</p>
                 </div>
-                <!-- Add more education here -->
+                <div class="education">
+                    <h3>Bachelor of Science in Electrical Engineering</h3>
+                    <p>HITEC University, Taxila, Pakistan (September 2017 – July 2021)</p>
+                    <p>Key Courses: Control Systems, Power System Analysis, Digital Signal Processing, High Voltage Engineering, Programming Fundamentals, Object-Oriented Programming, Data Structures and Algorithms, Microprocessor and Interfacing Techniques.</p>
+                    <p>Research Project: Evaluated natural plant ester oils as sustainable replacements for traditional transformer oils through comprehensive lab testing, including breakdown voltage, viscosity, and aging analysis.</p>
+                    <p>PEC Registration: ELECT/92394</p>
+                </div>
             </section>
             <section id="skills">
                 <h2>Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>MATLAB</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>AI/ML Tools</h3>
+                        <ul>
+                            <li>TensorFlow</li>
+                            <li>PyTorch</li>
+                            <li>SeqGAN</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cloud & DevOps Tools</h3>
+                        <ul>
+                            <li>AWS</li>
+                            <li>Docker</li>
+                            <li>Kubernetes</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Cybersecurity Expertise</h3>
+                        <ul>
+                            <li>Vulnerability Detection</li>
+                            <li>Fuzzing (AFL++)</li>
+                            <li>Transfer Learning</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Other Tools</h3>
+                        <ul>
+                            <li>Linux</li>
+                            <li>Embedded Systems</li>
+                            <li>Electrical System Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="projects">
+                <h2>Projects & Research</h2>
+                <div class="project">
+                    <h3>AI-Based Fuzzing Framework Development</h3>
+                    <p>Created a scalable and adaptive AI-driven framework for detecting vulnerabilities in embedded systems, utilizing the LAVA-M dataset and integrating advanced techniques such as SeqGAN and Transfer Learning.</p>
+                </div>
+                <div class="project">
+                    <h3>Transformer Oil Research</h3>
+                    <p>Conducted lab experiments to evaluate natural ester oils enhanced with nanoparticles as sustainable transformer oil alternatives. Optimized the dielectric properties through extensive testing, including breakdown voltage, flash point, and aging tests.</p>
+                </div>
+            </section>
+            <section id="certifications">
+                <h2>Certifications</h2>
                 <ul>
-                    <li>Programming Languages: Python, MATLAB, C++</li>
-                    <li>AI/ML Tools: TensorFlow, PyTorch, SeqGAN</li>
-                    <li>Cloud & DevOps Tools: AWS, Docker, Kubernetes</li>
-                    <li>Cybersecurity Expertise: Vulnerability Detection, Fuzzing (AFL++), Transfer Learning</li>
-                    <li>Other Tools: Linux, Embedded Systems, Electrical System Design</li>
+                    <li>AWS Certified Solutions Architect (2023)</li>
+                    <li>Machine Learning Specialization (Coursera) (2022)</li>
+                </ul>
+            </section>
+            <section id="languages">
+                <h2>Languages</h2>
+                <ul>
+                    <li>English: Proficient (C1)</li>
+                    <li>Urdu: Native</li>
                 </ul>
             </section>
             <section id="contact">
                 <h2>Contact Information</h2>
-                <p>Email: msoban584@gmail.com</p>
+                <p>Email: <a href="mailto:msoban584@gmail.com">msoban584@gmail.com</a></p>
                 <p>LinkedIn: <a href="https://linkedin.com/in/muhammad-soban-4a3157204" target="_blank">linkedin.com/in/muhammad-soban-4a3157204</a></p>
+                <p>GitHub: <a href="https://github.com/HafizMuhammadSobanKhan" target="_blank">github.com/HafizMuhammadSobanKhan</a></p>
                 <p>Phone: (+357) 99815806</p>
+                <p>Address: Atlantos 14, Flat 104, Nicosia, Cyprus, 2103</p>
             </section>
         </main>
         <footer>
