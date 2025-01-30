@@ -1,17 +1,33 @@
+<!DOCTYPE
+html >
+  <html>
+<head>
+<title>Three.js Particles</title>
+<style>
+body { margin: 0; overflow: hidden; }
+canvas { display: block; }
+</style>
+</head>
+<body>
+<div id="background"></div>
+<nav>
+  <a href="#section1">Section 1</a>
+  <a href="#section2">Section 2</a>
+</nav>
+<section id="section1">
+  <h1>Section 1</h1>
+  <p>Some content for section 1.</p>
+</section>
+<section id="section2">
+  <h1>Section 2</h1>
+  <p>Some content for section 2.</p>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
-    // Typing Effect for Name
-    const text = "Hafiz Muhammad Soban Khan";
-    let index = 0;
-    function typeWriter() {
-        if (index < text.length) {
-            document.getElementById("name").innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 100);
-        }
-    }
-    typeWriter();
-
-    // Set up the scene for particle background
+    // Set up the scene
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -36,17 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particlesMesh);
+
     camera.position.z = 2;
 
-    // Animation loop for particles
-    const clock = new THREE.Clock();
-    const animateParticles = () => {
-        const elapsedTime = clock.getElapsedTime();
-        particlesMesh.rotation.y = -0.1 * elapsedTime;
-        renderer.render(scene, camera);
-        requestAnimationFrame(animateParticles);
-    };
-    animateParticles();
+    // Animation
+    //const animate = () => {
+    //    requestAnimationFrame(animate);
+    //    particlesMesh.rotation.x += 0.0005;
+    //    particlesMesh.rotation.y += 0.0005;
+    //    renderer.render(scene, camera);
+    //};
+
+    //animate();
 
     // Resize handler
     window.addEventListener('resize', () => {
@@ -65,15 +82,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add parallax effect to background
-    document.addEventListener("scroll", function () {
-        let scrollPos = window.scrollY;
-        document.getElementById("background").style.transform = `translateY(${scrollPos * 0.3}px)`;
+    // Add hover effect to particles
+    let mouseX = 0;
+    let mouseY = 0;
+
+    document.addEventListener('mousemove', (event) => {
+        mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     });
 
-    // Scroll-triggered animations
+    const clock = new THREE.Clock();
+
+    const tick = () => {
+        const elapsedTime = clock.getElapsedTime();
+
+        // Update particles
+        particlesMesh.rotation.y = -0.1 * elapsedTime;
+        if (mouseX > 0) {
+            particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008);
+            particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008);
+        }
+
+        // Render
+        renderer.render(scene, camera);
+
+        // Call tick again on the next frame
+        window.requestAnimationFrame(tick);
+    };
+
+    tick();
+
+    // Add animations to sections
     gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('section').forEach((section) => {
+
+    gsap.utils.toArray('section').forEach((section, i) => {
         gsap.from(section, {
             opacity: 0,
             y: 50,
@@ -86,22 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Hover effect on particles (Mouse Follow)
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener('mousemove', (event) => {
-        mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-        mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-    });
-
-    const tick = () => {
-        particlesMesh.rotation.x += mouseY * 0.0001;
-        particlesMesh.rotation.y += mouseX * 0.0001;
-        renderer.render(scene, camera);
-        requestAnimationFrame(tick);
-    };
-
-    tick();
 });
+</script>
+</body>
+</html>
