@@ -13,7 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -38,7 +37,6 @@ body {
   padding: 2rem;
 }
 
-/* Header Styling */
 header {
   text-align: center;
   margin-bottom: 2rem;
@@ -48,18 +46,13 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Typing Effect */
-#name {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-  border-right: 3px solid var(--primary-color);
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Profile Picture Hover Effect */
 .profile-picture {
   width: 200px;
   height: 200px;
@@ -67,15 +60,8 @@ header {
   object-fit: cover;
   border: 4px solid var(--secondary-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-picture:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Social Links */
 .social-links {
   display: flex;
   gap: 1rem;
@@ -93,7 +79,19 @@ header {
   transform: translateY(-2px);
 }
 
-/* Navigation Bar */
+@media (max-width: 768px) {
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
 nav {
   background-color: var(--card-background);
   padding: 1rem;
@@ -116,22 +114,19 @@ nav ul li a {
   text-decoration: none;
   color: var(--secondary-color);
   font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
   color: var(--accent-color);
-  transform: scale(1.1);
 }
 
-/* Sections */
 section {
   background-color: var(--card-background);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 h2 {
@@ -157,13 +152,6 @@ ul {
   padding-left: 1rem;
 }
 
-/* Smooth Section Transition */
-section.hidden {
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-/* Skills Section */
 .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -202,7 +190,6 @@ section.hidden {
   color: var(--secondary-color);
 }
 
-/* Footer */
 footer {
   text-align: center;
   margin-top: 2rem;
@@ -213,7 +200,6 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
