@@ -225,3 +225,7 @@ footer {
     flex-direction: column;
   }
 }
+section {
+    padding-left: 40px;   /* space on the left */
+    padding-right: 40px;  /* space on the right */
+}
