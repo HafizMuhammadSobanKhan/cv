@@ -225,4 +225,17 @@ footer {
     flex-direction: column;
   }
 }
+/* This affects the whole page */
+body {
+    margin: 0;                /* reset browser default */
+    padding: 0;
+}
+
+/* This wraps your content */
+.container {
+    max-width: 1000px;        /* keeps it from being too wide */
+    margin: 0 auto;           /* centers horizontally */
+    padding: 1.5in;           /* sets page margin inside container */
+    box-sizing: border-box;   /* ensures padding is counted in total width */
+}
 
