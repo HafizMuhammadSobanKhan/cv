@@ -213,8 +213,8 @@ if (canvas && !reduceMotion) {
         const b = nodes[j];
         const distance = Math.hypot(a.x - b.x, a.y - b.y);
         if (distance < linkDistance) {
-          ctx.strokeStyle = `rgba(34, 211, 238, ${(1 - distance / linkDistance) * 0.28})`;
-          ctx.lineWidth = 1;
+          ctx.strokeStyle = `rgba(34, 211, 238, ${(1 - distance / linkDistance) * 0.55})`;
+          ctx.lineWidth = 1.2;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
@@ -226,16 +226,16 @@ if (canvas && !reduceMotion) {
     for (const node of nodes) {
       const distance = Math.hypot(node.x - pointer.x, node.y - pointer.y);
       if (distance < linkDistance * 1.3) {
-        ctx.strokeStyle = `rgba(167, 139, 250, ${(1 - distance / (linkDistance * 1.3)) * 0.4})`;
+        ctx.strokeStyle = `rgba(167, 139, 250, ${(1 - distance / (linkDistance * 1.3)) * 0.7})`;
         ctx.beginPath();
         ctx.moveTo(node.x, node.y);
         ctx.lineTo(pointer.x, pointer.y);
         ctx.stroke();
       }
 
-      ctx.fillStyle = "rgba(125, 211, 252, 0.75)";
+      ctx.fillStyle = "rgba(125, 211, 252, 0.95)";
       ctx.beginPath();
-      ctx.arc(node.x, node.y, 1.6, 0, Math.PI * 2);
+      ctx.arc(node.x, node.y, 2.4, 0, Math.PI * 2);
       ctx.fill();
     }
 
