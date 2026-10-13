@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Hafiz Muhammad Soban Khan, an embedded security tester and AI cybersecurity researcher based in The Hague.">
+  <meta name="description" content="Portfolio of Hafiz Muhammad Soban Khan, post-quantum cryptography researcher working on AI-driven and embedded cybersecurity.">
+  <meta name="theme-color" content="#05070d">
   <title>Hafiz Muhammad Soban Khan | AI Cybersecurity Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
   <header class="hero" id="top">
     <nav class="site-nav" aria-label="Primary navigation">
@@ -33,10 +37,10 @@
 
     <div class="hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Embedded security tester in The Hague</p>
-        <h1>AI-driven cybersecurity for embedded and critical infrastructure systems.</h1>
+        <p class="eyebrow"><span data-typed>Post-quantum cryptography research</span><span class="caret" aria-hidden="true"></span></p>
+        <h1>Post-quantum and AI-driven security for <span class="grad">embedded</span> and <span class="grad">critical infrastructure</span>.</h1>
         <p class="hero-text">
-          I combine artificial intelligence, protocol security, and embedded testing to build resilient systems for smart-grid and industrial environments.
+          I combine post-quantum cryptography, artificial intelligence, and protocol security to build resilient systems for smart-grid and industrial environments.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="mailto:msoban584@gmail.com">
@@ -50,11 +54,11 @@
         </div>
       </div>
 
-      <aside class="profile-card" aria-label="Profile summary">
+      <aside class="profile-card interactive" aria-label="Profile summary">
         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/My%20Pic.jpg-2A8wNObh4xpq5YODdJC1Xyvyeb3tNg.jpeg" alt="Hafiz Muhammad Soban Khan" class="profile-picture">
         <div>
           <h2>Hafiz Muhammad Soban Khan</h2>
-          <p>AI Specialist | Research Engineer | Electrical Engineer</p>
+          <p>AI Specialist | PQC Research Engineer | Electrical Engineer</p>
         </div>
         <div class="social-links" aria-label="Social profiles">
           <a href="https://linkedin.com/in/muhammad-soban-4a3157204" target="_blank" rel="noreferrer" aria-label="LinkedIn">
@@ -93,13 +97,13 @@
         <h2>Professional Summary</h2>
       </div>
       <p class="lead">
-        I am based in the Netherlands on a Highly Skilled Migrant visa and work as an Embedded Security Tester at ENCS, with a research focus on AI-driven cybersecurity.
+        I work as a Research Engineer in Post Quantum Cryptography at the KIOS Research and Innovation Center of Excellence, University of Cyprus, with a research focus on the security of PQC-enabled communication protocols and AI-driven cybersecurity.
       </p>
       <p>
         My expertise spans artificial intelligence, embedded systems, and security engineering. I design ML/RL-powered solutions for vulnerability detection, automated testing, and advanced fuzzing, while performing functional, robustness, and penetration testing on embedded devices. My work focuses on securing smart-grid infrastructures across DLMS/COSEM, HDLC/M-Bus, and IEC 60870-5-104 protocols, supported by scalable cloud pipelines using Linux, Docker, and AWS.
       </p>
       <p>
-        I hold an MSc in Artificial Intelligence from the University of Cyprus, completed on a full scholarship. Before joining ENCS, I worked as a Research Engineer at the KIOS Research and Innovation Center of Excellence and as an Electrical Engineer at Huawei Technologies.
+        I hold an MSc in Artificial Intelligence from the University of Cyprus, completed on a full scholarship. Earlier, I worked as a Research Engineer at the KIOS Research and Innovation Center of Excellence, as an Embedded Security Tester at ENCS, and as an Electrical Engineer at Huawei Technologies.
       </p>
     </section>
 
@@ -110,7 +114,20 @@
       </div>
       <div class="timeline">
         <article class="timeline-item">
-          <div class="timeline-meta">July 2025 - Present</div>
+          <div class="timeline-meta">July 2026 - Present</div>
+          <div class="timeline-content">
+            <h3>Research Engineer in Post Quantum Cryptography</h3>
+            <p class="muted">KIOS Research and Innovation Center of Excellence, University of Cyprus, Nicosia, Cyprus</p>
+            <ul>
+              <li>Conduct applied research within FOCAL, a Horizon Europe project, on the security and robustness of PQC-enabled communication and protocol implementations.</li>
+              <li>Built and tested a two-machine PQC client/server testbed, establishing a reproducible baseline for subsequent security evaluation and integration.</li>
+              <li>Investigate ML-KEM and ML-DSA integration into communication and authentication protocols, including TLS 1.3, and develop protocol-fuzzing and adaptive-testing approaches.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">July 2025 - June 2026</div>
           <div class="timeline-content">
             <h3>Embedded Security Tester</h3>
             <p class="muted">The European Network for Cyber Security (ENCS), The Hague, Netherlands</p>
@@ -167,12 +184,12 @@
         <h2>Education</h2>
       </div>
       <div class="card-grid two">
-        <article class="info-card">
+        <article class="info-card interactive">
           <h3>Master in Artificial Intelligence</h3>
           <p class="muted">University of Cyprus, Nicosia, Cyprus | September 2023 - June 2025</p>
           <p>Thesis: Adaptive and Scalable Fuzzing Framework for Universal Vulnerability Detection in Embedded Systems Using Advanced AI Techniques.</p>
         </article>
-        <article class="info-card">
+        <article class="info-card interactive">
           <h3>BSc in Electrical Engineering</h3>
           <p class="muted">HITEC University, Taxila, Pakistan | September 2017 - July 2021</p>
           <p>Research project on natural plant ester oils as sustainable transformer oil alternatives. PEC Registration: ELECT/92394.</p>
@@ -186,22 +203,22 @@
         <h2>Technical Skills</h2>
       </div>
       <div class="skills-grid">
-        <article class="skill-card">
+        <article class="skill-card interactive">
           <i class="fas fa-code" aria-hidden="true"></i>
           <h3>Languages</h3>
           <p>Python, Java, C/C++, SQL, JavaScript, HTML/CSS, R</p>
         </article>
-        <article class="skill-card">
+        <article class="skill-card interactive">
           <i class="fas fa-brain" aria-hidden="true"></i>
           <h3>AI & Data</h3>
           <p>Machine learning, deep learning, reinforcement learning, pandas, NumPy, TensorFlow, PyTorch</p>
         </article>
-        <article class="skill-card">
+        <article class="skill-card interactive">
           <i class="fas fa-shield-alt" aria-hidden="true"></i>
           <h3>Security</h3>
           <p>Embedded testing, fuzzing, vulnerability detection, protocol assessment, penetration testing</p>
         </article>
-        <article class="skill-card">
+        <article class="skill-card interactive">
           <i class="fas fa-server" aria-hidden="true"></i>
           <h3>Platforms</h3>
           <p>Linux, Docker, Kubernetes, AWS, Google Cloud Platform, Git, FastAPI, Flask</p>
@@ -215,17 +232,17 @@
         <h2>Projects</h2>
       </div>
       <div class="card-grid">
-        <article class="info-card">
+        <article class="info-card interactive">
           <span class="tag">Industrial security</span>
           <h3>Modbus TCP Fuzzer for Protocol Robustness Testing</h3>
           <p>Designed a Python fuzzer with full protocol coverage, field-aware mutation strategies, response logging, replay support, and structured packet builders.</p>
         </article>
-        <article class="info-card">
+        <article class="info-card interactive">
           <span class="tag">AI fuzzing</span>
           <h3>AI-Based Fuzzing Framework Development</h3>
           <p>Created a scalable AI-driven framework for embedded vulnerability detection using LAVA-M, deep learning, and reinforcement learning techniques.</p>
         </article>
-        <article class="info-card">
+        <article class="info-card interactive">
           <span class="tag">Power systems</span>
           <h3>Transformer Oil Research</h3>
           <p>Evaluated natural ester oils enhanced with nanoparticles through breakdown voltage, flash point, viscosity, and aging tests.</p>
@@ -238,7 +255,7 @@
         <p class="eyebrow">Publication</p>
         <h2>Research Output</h2>
       </div>
-      <article class="feature-card">
+      <article class="feature-card interactive">
         <span class="tag">IEEE DSC 2025</span>
         <h3>Adaptive Fuzzing Framework for Embedded Systems Vulnerability Detection Using Reinforcement and Deep Learning</h3>
         <p>
@@ -266,6 +283,10 @@
   <footer>
     <p>&copy; 2026 Hafiz Muhammad Soban Khan. All rights reserved.</p>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </a>
 
   <script src="scripts.js"></script>
 </body>
