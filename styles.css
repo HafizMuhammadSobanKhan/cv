@@ -399,6 +399,7 @@ h3 {
   border: 3px solid rgba(34, 211, 238, 0.35);
   border-radius: 12px;
   object-fit: cover;
+  object-position: center 20%;
   box-shadow: 0 0 40px rgba(34, 211, 238, 0.2);
 }
 
